@@ -15,8 +15,9 @@ const App = () => (
         <Route exact path="/" component={GreetingContainer} /> 
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        
+        <p>the change</p>
     </div>
+    
 );
 
 export default App;
