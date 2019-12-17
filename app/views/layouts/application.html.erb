@@ -12,9 +12,12 @@
           user: current_user).html_safe %>
       </script>
     <% end %>
+    <script type="text/javascript">
+      window.logoURL = "<%= image_url('logo.png') %>";
+    </script>
   </head>
 
-  <body>
+  <body> 
     <%= yield %>
   </body>
 </html>

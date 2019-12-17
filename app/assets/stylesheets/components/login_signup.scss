@@ -1,0 +1,25 @@
+.session-form-container {
+   display: flex;
+   justify-content: center;
+ }
+
+ .session-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ .sesion-input {
+   margin-left: 20px;
+ }
+
+ .session-form-box {
+   outline: 1px solid black;
+   padding: 20px;
+   background: white;
+   position: relative;
+ }
+
+ .session-submit {
+   text-transform: capitalize;
+ }

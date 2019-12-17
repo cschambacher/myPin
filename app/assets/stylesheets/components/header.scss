@@ -1,0 +1,55 @@
+@import "../base/colors";
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #eee;
+}
+
+.header {
+  background:white;
+  color: $darkgrey;
+  border-bottom: 1px solid #ccc;
+}
+
+.header a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 900px;
+  // border-left: 1px solid #ccc;
+  // border-right: 1px solid #ccc;
+}
+
+.header-logo {
+  display: flex;
+  border-left: 1px solid #ccc;
+  font-weight: 700;
+}
+
+.header-logo img {
+  height: 28px;
+  width: 28px;
+}
+
+.header-logo:hover {
+  background:$lightgrey;
+}
+
+.header-list {
+  display: flex;
+}
+
+.header-list > li {
+  border-left: 1px solid #ccc;
+}
+
+.header-list > li:hover {
+  background: $lightgrey;
+}

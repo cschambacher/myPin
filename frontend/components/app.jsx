@@ -4,18 +4,22 @@ import { Route, Link } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal/Modal';
+import Header from './header/header';
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <Link to="/" className="header-link">
-            <h1>myPin</h1>
+                <h1>myPin</h1>
             </Link>
+            <GreetingContainer />
         </header>
-        <Route exact path="/" component={GreetingContainer} /> 
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <p>the change</p>
+        
+        {/* <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+    
     </div>
     
 );

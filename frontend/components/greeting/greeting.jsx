@@ -1,52 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Modal from "../modal/Modal";
+import Header from "../header/header";
 
+const Greeting = ({ currentUser, logout, openModal }) => {
 
-const Greeting = ({currentUser, logout}) => {
-    
-    const display = currentUser ? (
-        <div>
-            <h2 className="header-name">Welcome, {currentUser.username}!</h2>
-            <button className="header-name" onClick={logout}>Log Out</button>
-        </div>
-    ): (
-        <div>
-            <Link className="btn" to="/login">Login</Link>
-            <p>or:</p>
-            <Link className="btn" to="/signup">Sign up!</Link>
-        </div>
+    const sessionLinks = () => (
+        <nav className="login-signup">
+            <button onClick={() => openModal('login')}>Login</button>
+            &nbsp;or&nbsp;
+            <button onClick={() => openModal('signup')}>Signup</button>
+        </nav>
     );
-    return(
-        <header className = "header-bar" >
-            <div>
-                {display}
-            </div>
-        </header >
-    )
+    const personalGreeting = () => (
+        <hgroup className="header-group">
+            <Header/>
+            <h2 className="header-name">Hi, {currentUser.username}!</h2>
+            <button className="header-button" onClick={logout}>Log Out</button>
+        </hgroup>
+    );
+
+    return (
+        currentUser ?
+            personalGreeting(currentUser, logout) :
+            sessionLinks()
+    );
 };
 
 export default Greeting;
-
-// //--------------
-
-// export default ({ currentUser, logout }) => {
-//     const display = currentUser ? (
-//         <div>
-//             <h3>Welcome {currentUser.username}!</h3>
-//             <button onClick={logout}>Logout</button>
-//         </div>
-//     ) : (
-//             <div>
-//                 <Link className="btn" to="/signup">Sign Up</Link>
-//                 <Link className="btn" to="/login">Log In</Link>
-//             </div>
-//         );
-//     return (
-//         <header className="nav-bar">
-//             <h1 className="logo">BLUEBIRD</h1>
-//             <div>
-//                 {display}
-//             </div>
-//         </header>
-//     )
-// }
