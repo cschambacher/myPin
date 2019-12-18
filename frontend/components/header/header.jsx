@@ -12,8 +12,14 @@ const Header = ({ currentUser, logout, openModal }) => {
                 <div className="header-logo">
                     <img src={window.logoURL} />
                 </div>
-                <div className="header-nav-app">MyPin</div>
-                <div className="header-nav-search"><a href="#">Search</a></div>
+                <div className="header-app"><h1>MyPin</h1></div>
+                <div className="header-nav-search">
+                    <input
+                    type="text"
+                    value=""
+                    placeholder="Search"
+                    className="search-input"
+                /></div>
                 <div>
                     <ul className="header-list">
                         <li><a href="#">Home</a></li>

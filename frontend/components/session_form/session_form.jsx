@@ -43,40 +43,53 @@ class SessionForm extends React.Component {
             <div className="session-form-container">
                 
                 <form onSubmit={this.handleSubmit} className="session-form-box">
-                    Welcome to MyPin!
+                    <nav className="session-header">
+                    <div className="session-logo">
+                        <img src={window.logoURL} />
+                    </div>
+                    <h3>Welcome to MyPin!</h3>
+                    <h4>Find new ideas to try</h4>
+                    </nav>
                     <br />
-                    Please {this.props.formType} or {this.props.navLink}
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
-                    {this.renderErrors()}
+
+                    
+                    {/* <div onClick={this.props.closeModal} className="close-x">X</div> */}
+                    <div className="session-errors">{this.renderErrors()}</div>
                     <div className="session-form">
                         <br/>
-                    <label>Username:
+
                         <input
                             type="text"
                             value={this.state.username}
                             onChange={this.handleInput('username')}
+                            placeholder="Username"
                             className="session-input"
                         />
-                    </label>
+                
                     <br/>
-                    <label>Email:
+                  
                     <input
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
+                            placeholder="Email"
                             className="session-input"
                         />
-                    </label>
+                   
                     <br/>
-                    <label>Password:
                          <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
+                            placeholder="Password"
                             className="session-input"
                         />
-                            <input className="session-submit" type="submit" value={this.props.formType}/>
-                    </label>
+                        <div>
+                        <input className="session-submit" type="submit" value={this.props.formType}/>
+                        </div>
+                    </div>
+                    <div className="session-form-bottom">
+                        Please {this.props.formType} or {this.props.navLink}
                     </div>
                 </form>
             </div>

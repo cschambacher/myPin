@@ -33,10 +33,14 @@
   background: #fff;
   z-index: 3;
   border-radius: 5px;
-  border: 1px solid #000;
+  border: 1px solid grey;
 }
 
-
+  .modal-button{
+    position: relative;
+    top: 50px;
+    left: 10%;
+  }
 
  
 

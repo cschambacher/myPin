@@ -17,7 +17,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <hgroup className="header">
             <Header/>
             <div className="header-greeting">
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
+            <span className="header-name">Hi, {currentUser.username}!</span>
             <button className="header-greeting-btn" onClick={logout}>Log Out</button>
             </div>
         </hgroup>
