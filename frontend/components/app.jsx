@@ -8,11 +8,9 @@ import Modal from './modal/Modal';
 import Header from './header/header';
 
 const App = () => (
-    <div>
-        <Modal />
+    <div>     
         <header>
-            <Link to="/" className="header-link">
-                <h1>myPin</h1>
+            <Link to="/" className="header-link">               
             </Link>
             <GreetingContainer />
         </header>
