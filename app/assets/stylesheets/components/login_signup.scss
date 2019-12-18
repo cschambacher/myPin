@@ -1,9 +1,26 @@
+.masonry{
+    column-count: 4;
+  column-gap: 1em;
+}
+
+.item{
+    background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  border-radius: 7px;
+  width: 100%;
+}
+.item img{
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
 .session-form-container {
     position: relative;
   top: 10px;
   left: 50%;
   margin-left: -220px;
-  width: 360px;
+  width: 400px;
 //   padding: 20px;
   background: #fff;
   z-index: 3;
@@ -45,7 +62,10 @@
    background: white;
    position: relative;
  }
-
+.session-btn{
+    display: flex;
+    justify-content: center;
+}
  .session-submit {
      margin-top: 10px;
     //  margin-left: 20px;
@@ -54,6 +74,9 @@
   padding: 10px;
   border-radius: 5px;
    text-transform: capitalize;
+   color: white;
+    font-weight: bold;
+    background-color: rgb(202, 5, 5);
  }
  .session-form-bottom{
      margin-top: 10px;
