@@ -65,16 +65,6 @@ class SessionForm extends React.Component {
                             placeholder="Username"
                             className="session-input"
                         />
-                
-                    <br/>
-                  
-                    <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                            placeholder="Email"
-                            className="session-input"
-                        />
                    
                     <br/>
                          <input
@@ -88,9 +78,10 @@ class SessionForm extends React.Component {
                         <input className="session-submit" type="submit" value={this.props.formType}/>
                         </div>
                     </div>
-                    <div className="session-form-bottom">
+                    <small>By continuing, you agree to have fun and get creative</small>
+                    {/* <div className="session-form-bottom">
                         Please {this.props.formType} or {this.props.navLink}
-                    </div>
+                    </div> */}
                 </form>
             </div>
         );

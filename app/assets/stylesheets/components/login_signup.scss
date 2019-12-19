@@ -12,7 +12,7 @@
 }
 .item img{
     border-radius: 15px;
-    margin-left: 15px;
+    // margin-left: 15px;
 }
 
 .session-form-container {
@@ -24,12 +24,18 @@
 //   padding: 20px;
   background: #fff;
   z-index: 3;
-  border-radius: 7px;
+    border-radius: 5%;
   border: 1px solid grey;
    display: flex;
    justify-content: center;
  }
-
+.session-form-box{
+    border-radius: 5%;
+    padding: 40px;
+   background: white;
+   position: relative;
+    
+}
  .session-form {
    display: flex;
    justify-content: center;
@@ -58,9 +64,7 @@
 
  .session-form-box {
 //    outline: 1px solid black;
-   padding: 20px;
-   background: white;
-   position: relative;
+   
  }
 .session-btn{
     display: flex;
@@ -82,4 +86,9 @@
      margin-top: 10px;
     border-top: 1px solid grey;
     padding: 10px;
+ }
+ small{
+     margin-top: 20px;
+     font-size: x-small;
+     color:grey;
  }

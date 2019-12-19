@@ -3,7 +3,7 @@
   <head>
     <title>myPin</title>
     <%= csrf_meta_tags %>
-
+    <script src="https://kit.fontawesome.com/9e57d063f3.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <% if logged_in? %>
@@ -13,9 +13,7 @@
       </script>
     <% end %>
     <script type="text/javascript">
-      window.logoURL = "<%= image_url('logo.png') %>";
-      window.spriteURL = "<%= image_url('sprite.png') %>";
-      window.backgroundURL = "<%= image_url('background1.png') %>";
+      window.logo2URL = "<%= image_url('logo2.png') %>";
       window.pin1URL = "<%= image_url('pin1.jpg') %>";
       window.pin2URL = "<%= image_url('pin2.jpg') %>";
       window.pin3URL = "<%= image_url('pin3.jpg') %>";
