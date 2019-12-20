@@ -1,6 +1,6 @@
 class Pin < ApplicationRecord
     validates :url, :title, :description, :author_id, presence: true
-    validates :author_id, uniqueness: true
+    
 
     belongs_to :author,
     class_name: 'User',

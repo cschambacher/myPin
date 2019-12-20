@@ -1,7 +1,6 @@
 class Board < ApplicationRecord
-    validates :title, :private, :author_id, presence: true
-    validates :author_id, uniqueness: true
-    validates :private, inclusion: { in: ['true', 'false'] }
+    validates :title, :author_id, presence: true
+    validates :private, inclusion: { in: [true, false] }
 
     belongs_to :author,
     class_name: 'User',

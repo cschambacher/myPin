@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import Greeting from "../greeting/greeting_container";
 
 const Header = ({ currentUser, logout, openModal }) => {
 
     return(
-        <header>
+        <header className="header">
             <nav className="header-nav">
                 <div className="header-logo">
                     <img src={window.logo2URL} />
@@ -22,13 +23,14 @@ const Header = ({ currentUser, logout, openModal }) => {
                     <ul className="header-list">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Following</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><Link to={`/pins/`}>Profile</Link></li>
                         <li className="icon-message"><i className="fas fa-comment-dots fa-2x"></i></li>
                         <li className="icon-notification"><i className="fas fa-bell fa-2x"></i></li>
                         <li className="header-button" onClick={logout}>Log Out</li>
                     </ul>
                 </div>
             </nav>
+            <Greeting />
             
         </header>
     )

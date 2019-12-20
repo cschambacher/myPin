@@ -1,23 +1,22 @@
 import React from "react";
-import GreetingContainer from "./greeting/greeting_container";
-import { Route, Link } from 'react-router-dom';
+import homeContainer from "./home/home_container";
+import { Route, Switch, Link } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/Modal';
-import Header from './header/header';
+import Header from './header/header_container';
+import PinIndexContainer from './pins/pin_index_container'
 
 const App = () => (
-    <div>     
-        <header>
-            <Link to="/" className="header-link">               
-            </Link>
-            <GreetingContainer />
-        </header>
-        
-        {/* <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} /> */}
-    
+    <div>       
+        <ProtectedRoute path="/" component={Header} />
+        {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
+        {/* <AuthRoute path="/signup" component={SignupFormContainer} />  */}
+        <Switch>
+        <ProtectedRoute path="/pins" component={PinIndexContainer} />
+        <Route path="/" component={homeContainer} />
+        </Switch>
     </div>
     
 );

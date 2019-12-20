@@ -1,0 +1,1 @@
+export const selectAllPins = ({ entities: {pins} }) => Object.keys(pins).map(id => pins[id]);

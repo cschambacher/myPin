@@ -28,3 +28,19 @@ button{
   padding: 10px;
   border-radius: 5px;
 }
+.masonry{
+    column-count: 4;
+  column-gap: 1em;
+}
+
+.item{
+    background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  border-radius: 7px;
+  width: 100%;
+}
+.item img{
+    border-radius: 15px;
+    // margin-left: 15px;
+}

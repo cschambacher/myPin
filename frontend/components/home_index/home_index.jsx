@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Masonry = ()=>{
+const HomeIndex = ()=>{
         
     return (
         <div className="masonry">
@@ -26,4 +26,4 @@ const Masonry = ()=>{
 
 
 
-export default Masonry;
+export default HomeIndex;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import {logout} from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
-import Greeting from './greeting';
+import Home from './home';
 
 const mstp = ({ session, entities }) => {
     // debugger;
@@ -11,9 +11,9 @@ const mstp = ({ session, entities }) => {
 };
 
 const mdtp = dispatch => ({
-    logout: () => dispatch(logout()),
+    logout: ()=> dispatch(logout()),
     openModal: modal => dispatch(openModal(modal))
 });
 
 
-export default connect(mstp, mdtp)(Greeting)
+export default connect(mstp, mdtp)(Home)
