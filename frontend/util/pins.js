@@ -5,6 +5,13 @@ export const getPins = () => {
     })
 };
 
+export const getHomePins = () => {
+    return $.ajax({
+        method: 'GET',
+        url: '/api/pins/homeindex'
+    })
+};
+
 export const getSinglePin = id => (
     $.ajax({
         method: 'GET',

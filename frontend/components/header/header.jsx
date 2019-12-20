@@ -21,7 +21,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                 /></div>
                 <div className="header-right">
                     <ul className="header-list">
-                        <li><a href="#">Home</a></li>
+                        <li><Link to={`/pins/homeindex`}>Home</Link></li>
                         <li><a href="#">Following</a></li>
                         <li><Link to={`/pins/`}>Profile</Link></li>
                         <li className="icon-message"><i className="fas fa-comment-dots fa-2x"></i></li>

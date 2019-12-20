@@ -5,7 +5,12 @@ class Api::PinsController < ApplicationController
     end
     
     def index
-        render json: Pin.all.where(author_id: current_user.id)
+        @pins = Pin.all.where(author_id: current_user.id)
+    end
+
+    def homeindex
+        @pins = Pin.all
+        render :index 
     end
 
     def show

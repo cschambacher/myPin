@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "../modal/Modal";
 import Header from "../header/header_container";
-import HomeIndex from "../home_index/home_index";
+import HomeIndex from "../home_index/home_index_container";
 import PinIndex from "../pins/pin_index_container";
 import Greeting from "../greeting/greeting_container";
 
@@ -15,7 +15,7 @@ const Home = ({ currentUser, logout, openModal }) => {
         </nav>
     );
     const personalGreeting = () => (
-        <hgroup className="header">
+        <hgroup className="home">
             {/* <Header/>  */}
             {/* <div className="header-greeting">
             <span className="header-name">Hi, {currentUser.username}!</span>
