@@ -3,7 +3,7 @@ import React from 'react';
 const HomeIndex = ()=>{
         
     return (
-        <div className="masonry">
+        <div className="masonry-home-index">
             <div className="item"><img src={window.pin1URL} /></div>
             <div className="item"><img src={window.pin2URL} /></div>
             <div className="item"><img src={window.pin3URL} /></div>
