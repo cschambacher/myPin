@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
-const PinsIndexItem = ({ pin }) => {
+
+
+const PinsIndexItem = ({ pin, testUrl }) => {
 
     return (
-        <li className="pin-index-item">
+        <li className="item-pin-index">
             <Link to={`/pins/${pin.id}`}>
                 <span>{pin.title}</span>
-                <img src={"https://i.pinimg.com/564x/68/57/b4/6857b465e7015773582fed0e2e5b26cf.jpg"} />
+                <img src={testUrl} />
                 <span>{pin.description}</span>
             </Link>
         </li>
