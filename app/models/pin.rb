@@ -1,6 +1,7 @@
 class Pin < ApplicationRecord
-    validates :url, :title, :description, :author_id, presence: true
+    validates :title, :description, :author_id, presence: true
     
+    has_one_attached :photo
 
     belongs_to :author,
     class_name: 'User',
