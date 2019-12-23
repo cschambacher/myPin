@@ -9,7 +9,7 @@ const Header = ({ currentUser, logout, openModal }) => {
         <header className="header">
             <nav className="header-nav">
                 <div className="header-logo">
-                    <img src={window.logo2URL} />
+                    <Link to={`/pins/homeindex`}><img src={window.logo2URL} /></Link>
                 </div>
                 <div className="header-nav-search">
                     <div className="icon-search"><i className="fas fa-search"></i></div>

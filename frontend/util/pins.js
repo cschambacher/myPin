@@ -12,10 +12,10 @@ export const getHomePins = () => {
     })
 };
 
-export const getSinglePin = id => (
+export const getSinglePin = pinId => (
     $.ajax({
         method: 'GET',
-        url: `api/pins/${id}`
+        url: `api/pins/${pinId}`
     })
 );
 
@@ -23,7 +23,25 @@ export const createPin = (pin) => {
     return $.ajax({
         method: 'POST',
         url: '/api/pins',
-        data: { pin }
+        data: pin,
+        contentType: false,
+        processData: false
     });
 };
 
+export const updatePin = pin => (
+    $.ajax({
+        url: `/api/pins/${pin.id}`,
+        method: 'patch',
+        data: pin,
+        contentType: false,
+        processData:false
+    })
+);
+
+export const deletePin = pinId => (
+    $.ajax({
+        url: `/api/pins/${pinId}/`,
+        method: 'DELETE'
+    })
+)

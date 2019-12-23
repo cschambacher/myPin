@@ -2,6 +2,7 @@ export const RECEIVE_PINS = 'RECEIVE_PINS';
 export const RECEIVE_HOME_PINS = 'RECEIVE_HOME_PINS';
 export const RECEIVE_SINGLE_PIN = 'RECEIVE_SINGLE_PIN';
 export const CREATE_PIN = 'CREATE_PIN';
+export const REMOVE_PIN = 'REMOVE_PIN';
 export const RECEIVE_PIN_ERRORS = 'RECEIVE_PIN_ERRORS';
 import * as APIUtil from '../util/pins';
 
@@ -16,11 +17,11 @@ export const requestHomePins = () => (dispatch) => {
         .then(pins => { dispatch(receiveHomePins(pins)) });
 }
 
-export const requestSinglePin = (id) => (dispatch) => {
-    return APIUtil.getSinglePin(id).then(pin => {
+export const requestSinglePin = (pinId) => (dispatch) => {
+    return APIUtil.getSinglePin(pinId).then(pin => {
         dispatch(receiveSinglePin(pin));
         return pin;
-    });
+    }).fail(err => dispatch(receivePinErrors(err.responseJSON)))
 }
 
 export const createPin = pin => dispatch => (
@@ -28,6 +29,17 @@ export const createPin = pin => dispatch => (
         dispatch(receiveSinglePin(pin));
         return pin;
     }).fail(err => dispatch(receivePinErrors(err.responseJSON)))
+);
+
+export const updatePin = pin => dispatch => (
+    APIUtil.updatePin(pin)
+        .then(pin => dispatch(receiveSinglePin(pin)))
+        .fail(err => dispatch(receivePinErrors(err.responseJSON)))
+);
+
+export const deletePin = pinId => dispatch => (
+    APIUtil.deletePin(pinId)
+        .then(() => dispatch(removePin(pinId)))
 );
 const receivePins = pins => ({
     type: RECEIVE_PINS,
@@ -38,9 +50,14 @@ const receiveHomePins = pins => ({
     pins
 });
 
-const receiveSinglePin = payload => ({
+const receiveSinglePin = pin => ({
     type: RECEIVE_SINGLE_PIN,
-    payload
+    pin
+});
+
+const removePin = pinId => ({
+    type: REMOVE_PIN,
+    pinId
 });
 
 export const receivePinErrors = errors => ({

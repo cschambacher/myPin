@@ -7,7 +7,10 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/Modal';
 import Header from './header/header_container';
-import PinIndexContainer from './pins/pin_index_container'
+import PinIndexContainer from './pins/pin_index_container';
+import PinShowContainer from './pins/pin_show_container';
+import EditPinFormContainer from './pins/edit_pin_form_container';
+
 
 const App = () => (
     <div>       
@@ -18,6 +21,8 @@ const App = () => (
         
         {/* <ProtectedRoute path="/pins/:pinId" component={PinIndexContainer} /> */}
         <Route path="/pins/homeindex" component={homeIndexContainer} />
+        <Route exact path="/pins/:pinId" component={PinShowContainer} />
+        <Route path="/pins/:pinId/edit" component={EditPinFormContainer} />
         <ProtectedRoute path="/pins" component={PinIndexContainer} />
         <Route path="/" component={homeContainer} />
         </Switch>

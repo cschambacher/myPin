@@ -1,6 +1,6 @@
 import React from 'react';
 import PinIndex from './pin_index';
-import { requestPins } from '../../actions/pins_actions';
+import { requestPins, deletePin  } from '../../actions/pins_actions';
 import { selectAllPins } from '../../reducer/selectors';
 import { connect } from 'react-redux';
 
@@ -9,7 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    requestPins: () => dispatch(requestPins())
+    requestPins: () => dispatch(requestPins()),
+    deletePin: pinId => dispatch(deletePin(pinId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PinIndex);
