@@ -10,6 +10,9 @@ import Header from './header/header_container';
 import PinIndexContainer from './pins/pin_index_container';
 import PinShowContainer from './pins/pin_show_container';
 import EditPinFormContainer from './pins/edit_pin_form_container';
+import BoardIndexContainer from './boards/board_index_container';
+import BoardShowContainer from './boards/board_show_container';
+import EditBoardFormContainer from './boards/edit_board_form_container';
 
 
 const App = () => (
@@ -24,6 +27,9 @@ const App = () => (
         <Route exact path="/pins/:pinId" component={PinShowContainer} />
         <Route path="/pins/:pinId/edit" component={EditPinFormContainer} />
         <ProtectedRoute path="/pins" component={PinIndexContainer} />
+        <Route exact path="/boards/:boardId" component={BoardShowContainer} />
+        <Route path="/boards/:boardId/edit" component={EditBoardFormContainer} />
+        <ProtectedRoute path="/boards" component={BoardIndexContainer} />
         <Route path="/" component={homeContainer} />
         </Switch>
     </div>

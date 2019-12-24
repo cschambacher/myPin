@@ -55,6 +55,6 @@ class Api::BoardsController < ApplicationController
     private
 
     def board_params
-        params.require(:board).permit(:title, :private, :author_id)
+        params.require(:board).permit(:title, :private, :author_id, :pin_ids)
     end
 end

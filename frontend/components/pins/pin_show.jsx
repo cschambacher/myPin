@@ -15,7 +15,6 @@ class PinShow extends React.Component {
                 <h1>{pin.title}</h1>
                 <img src={pin.photoUrl}/>
                 <p>{pin.decription}</p>
-                <Link to="/" />
             </div>
         );
     }

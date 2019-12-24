@@ -7,3 +7,12 @@ export const selectPin = ({ entities: { pins } }, id) => {
     }
     return {};
 };
+export const selectAllBoards = ({ entities: { boards } }) => Object.values(boards)
+
+export const selectBoard = ({ entities: { boards } }, id) => {
+    if (boards[id]) {
+        const board = boards[id];
+        return board;
+    }
+    return {};
+};

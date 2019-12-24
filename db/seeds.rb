@@ -97,6 +97,10 @@ p10 = Pin.create!(
   author_id: u2.id
 )
 
+b1.pins += [p1, p3]
+
+b2.pins += [p5, p6, p10]
+
 file1 = open('https://mypin-dev.s3-us-west-1.amazonaws.com/pin1.jpg')
 p1.photo.attach(io: file1, filename: "pin1")
 file2 = open('https://mypin-dev.s3-us-west-1.amazonaws.com/pin2.jpg')
