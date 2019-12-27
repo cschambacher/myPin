@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/boards';
 
 export const RECEIVE_BOARDS = "RECEIVE_BOARDS";
-export const RECEIVE_BOARD = "RECEIVE_BOARD";
+export const RECEIVE_SINGLE_BOARD = "RECEIVE_SINGLE_BOARD";
 export const CREATE_BOARD = 'CREATE_BOARD';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';

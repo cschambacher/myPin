@@ -13,7 +13,7 @@ class BoardIndex extends React.Component {
 
     render() {
         const { boards, deleteBoard } = this.props;
-        // debugger;
+        debugger;
         return (
             <section className="masonry-pin-index">
                 <ul>

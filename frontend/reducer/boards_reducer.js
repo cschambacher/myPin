@@ -1,4 +1,4 @@
-import { RECEIVE_BOARDS, RECEIVE_HOME_BOARDS, RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from '../actions/pins_actions';
+import { RECEIVE_BOARDS, RECEIVE_SINGLE_BOARD, REMOVE_BOARD } from '../actions/boards_actions';
 
 const boardsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -6,7 +6,8 @@ const boardsReducer = (state = {}, action) => {
     let board;
     switch (action.type) {
         case RECEIVE_BOARDS:
-        case RECEIVE_HOME_BOARDS:
+        // case RECEIVE_HOME_BOARDS:
+            debugger
             return Object.assign({}, action.boards);
         case RECEIVE_SINGLE_BOARD:
             board = action.board

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PinIndexItem from '../pins/pin_item';
 
 class BoardShow extends React.Component {
    
@@ -13,8 +14,8 @@ class BoardShow extends React.Component {
         return (
             <div>
                 <h1>{board.title}</h1>
-                {/* <img src={pin.photoUrl}/> */}
                 <p>{board.private}</p>
+                <p>{board.pins.map(pin => <PinIndexItem key={pin.id} pin={pin}/>)}</p>
                 <Link to="/" />
             </div>
         );

@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom';
 import Greeting from "../greeting/greeting_container";
 
 const Header = ({ currentUser, logout, openModal }) => {
-
+   
     return(
         <header className="header">
             <nav className="header-nav">
@@ -23,7 +23,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                     <ul className="header-list">
                         <li><Link to={`/pins/homeindex`}>Home</Link></li>
                         <li><a href="#">Following</a></li>
-                        <li><Link to={`/pins/`}>Profile</Link></li>
+                        <li><Link to={`/users/${currentUser.id}/`}>Profile</Link></li>
                         <li className="icon-message"><i className="fas fa-comment-dots fa-2x"></i></li>
                         <li className="icon-notification"><i className="fas fa-bell fa-2x"></i></li>
                         <li className="header-button" onClick={logout}>Log Out</li>

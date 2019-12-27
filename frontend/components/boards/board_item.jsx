@@ -8,7 +8,7 @@ const BoardsIndexItem = ({ board, deleteBoard }) => {
     return (
         <li className="item-pin-index">
             <Link to={`/boards/${board.id}`}>
-                {/* <span>{pin.title}</span> */}
+                <span>{board.title}</span>
                 {/* <img src={pin.photoUrl} /> */}
                 {/* <span>{pin.description}</span> */}
             </Link>

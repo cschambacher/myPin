@@ -13,7 +13,7 @@ import EditPinFormContainer from './pins/edit_pin_form_container';
 import BoardIndexContainer from './boards/board_index_container';
 import BoardShowContainer from './boards/board_show_container';
 import EditBoardFormContainer from './boards/edit_board_form_container';
-
+import ProfileContainer from './profile/profile_container'
 
 const App = () => (
     <div>       
@@ -26,10 +26,12 @@ const App = () => (
         <Route path="/pins/homeindex" component={homeIndexContainer} />
         <Route exact path="/pins/:pinId" component={PinShowContainer} />
         <Route path="/pins/:pinId/edit" component={EditPinFormContainer} />
-        <ProtectedRoute path="/pins" component={PinIndexContainer} />
+        
+        <ProtectedRoute path="/users/:userId/pins/" component={PinIndexContainer} />
         <Route exact path="/boards/:boardId" component={BoardShowContainer} />
         <Route path="/boards/:boardId/edit" component={EditBoardFormContainer} />
-        <ProtectedRoute path="/boards" component={BoardIndexContainer} />
+        <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer} />
+        <ProtectedRoute path="/users/:userId/" component={ProfileContainer} />
         <Route path="/" component={homeContainer} />
         </Switch>
     </div>

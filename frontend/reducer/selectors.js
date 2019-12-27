@@ -16,3 +16,11 @@ export const selectBoard = ({ entities: { boards } }, id) => {
     }
     return {};
 };
+
+export const selectUser = ({ entities: { users } }, id) => {
+    if (users[id]) {
+        const user = users[id];
+        return user;
+    }
+    return {};
+};

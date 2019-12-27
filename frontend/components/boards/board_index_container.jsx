@@ -4,9 +4,12 @@ import { requestBoards, deleteBoard } from '../../actions/boards_actions';
 import { selectAllBoards } from '../../reducer/selectors';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+    debugger;
+    return {
     boards: selectAllBoards(state)
-});
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     requestBoards: () => dispatch(requestBoards()),
