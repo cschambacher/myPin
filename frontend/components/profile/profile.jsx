@@ -4,10 +4,10 @@ import Tabs from './tabs';
 import PinIndex from '../pins/pin_index_container';
 import BoardIndex from '../boards/board_index_container';
 
-const panes = [
-    { title: 'pins', content: <PinIndex /> },
-    { title: 'boards', content: <BoardIndex /> },
-];
+// const panes = [
+//     { title: 'pins', content: <PinIndex /> },
+//     { title: 'boards', content: <BoardIndex /> },
+// ];
 
 export default class Profile extends React.Component {
     constructor(props){
@@ -22,7 +22,7 @@ export default class Profile extends React.Component {
     }
     
     componentDidMount() {
-        this.props.requestSinglePin(this.props.pinId);
+        this.props.requestSingleUser(this.props.userId);
     }
 
     render (){

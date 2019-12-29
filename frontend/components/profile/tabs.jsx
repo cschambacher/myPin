@@ -42,8 +42,7 @@ export default class Tabs extends React.Component {
         const pane = this.props.panes[this.state.selectedPane];
 
         return (
-            <div>
-                <h1>Tabs</h1>
+            <div className='profile-tabs'>
                 <div className='tabs'>
                     <Headers
                         selectedPane={this.state.selectedPane}

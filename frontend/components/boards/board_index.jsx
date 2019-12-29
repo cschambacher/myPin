@@ -13,9 +13,9 @@ class BoardIndex extends React.Component {
 
     render() {
         const { boards, deleteBoard } = this.props;
-        debugger;
+        // debugger;
         return (
-            <section className="masonry-pin-index">
+            <section className="boardz centered-block">
                 <ul>
                     {boards.map(board => <BoardIndexItem key={board.id} board={board} deleteBoard={deleteBoard}/>)}
                 </ul>

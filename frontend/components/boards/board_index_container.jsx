@@ -5,9 +5,9 @@ import { selectAllBoards } from '../../reducer/selectors';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-    debugger;
+    // debugger;
     return {
-    boards: selectAllBoards(state)
+    boards: selectAllBoards(state),
     }
 };
 
