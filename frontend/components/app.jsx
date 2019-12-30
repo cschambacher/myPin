@@ -26,14 +26,15 @@ const App = () => (
         
         {/* <ProtectedRoute path="/pins/:pinId" component={PinIndexContainer} /> */}
         <Route path="/home" component={homeIndexContainer} />
+        <ProtectedRoute path="/pins/new" component={CreatePinFormContainer} />
         <Route exact path="/pins/:pinId" component={PinShowContainer} />
         <Route path="/pins/:pinId/edit" component={EditPinFormContainer} />
         
         <ProtectedRoute path="/users/:userId/pins/" component={PinIndexContainer} />
         <Route exact path="/boards/:boardId" component={BoardShowContainer} />
         <ProtectedRoute path="/boards/:boardId/edit" component={EditBoardFormContainer} />
-        {/* <ProtectedRoute path="/boards/new" component={CreateBoardFormContainer} /> */}
-        {/* <ProtectedRoute path="/pins/new" component={CreatePinFormContainer} /> */}
+        <ProtectedRoute path="/boards/new" component={CreateBoardFormContainer} /> 
+        
         <ProtectedRoute path="/users/:userId/boards" component={BoardIndexContainer} />
         <ProtectedRoute path="/users/:userId/" component={ProfileContainer} />
         <Route path="/" component={homeContainer} />
