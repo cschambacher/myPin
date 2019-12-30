@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    requestBoards: () => dispatch(requestBoards()),
+    requestBoards: (userId) => dispatch(requestBoards(userId)),
     deleteBoard: boardId => dispatch(deleteBoard(boardId))
 });
 

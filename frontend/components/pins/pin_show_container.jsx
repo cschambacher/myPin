@@ -6,7 +6,7 @@ import { selectPin } from '../../reducer/selectors';
 const mapStateToProps = (state, ownProps) => {
     const pinId = parseInt(ownProps.match.params.pinId); 
     const pin = selectPin(state, pinId);
-    debugger;
+    // debugger;
     return {
         pinId,
         pin
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    requestSinglePin: pinId => dispatch(requestSinglePin(pinId))
+    requestSinglePin: (pinId, userId )=> dispatch(requestSinglePin(pinId, userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PinShow);

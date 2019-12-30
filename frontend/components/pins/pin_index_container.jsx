@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    requestPins: () => dispatch(requestPins()),
+    requestPins: (userId) => dispatch(requestPins(userId)),
     deletePin: pinId => dispatch(deletePin(pinId))
 });
 

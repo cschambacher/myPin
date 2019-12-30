@@ -9,7 +9,7 @@ const Header = ({ currentUser, logout, openModal }) => {
         <header className="header">
             <nav className="header-nav">
                 <div className="header-logo">
-                    <Link to={`/pins/homeindex`}><img src={window.logo2URL} /></Link>
+                    <Link to={`/home`}><img src={window.logo2URL} /></Link>
                 </div>
                 <div className="header-nav-search">
                     <div className="icon-search"><i className="fas fa-search"></i></div>
@@ -21,7 +21,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                 /></div>
                 <div className="header-right">
                     <ul className="header-list">
-                        <li><Link to={`/pins/homeindex`}>Home</Link></li>
+                        <li><Link to={`/home`}>Home</Link></li>
                         <li><a href="#">Following</a></li>
                         <li><Link to={`/users/${currentUser.id}/`}>Profile</Link></li>
                         <li className="icon-message"><i className="fas fa-comment-dots fa-2x"></i></li>
@@ -30,7 +30,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                     </ul>
                 </div>
             </nav>
-            <Greeting />
+            {/* <Greeting /> */}
             
         </header>
     )

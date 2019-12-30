@@ -1,16 +1,9 @@
-export const getBoards = () => {
+export const getBoards = (userId) => {
     return $.ajax({
         method: 'GET',
-        url: '/api/boards'
+        url: `/api/users/${userId}/boards`
     })
 };
-
-// export const getHomePins = () => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: '/api/pins/homeindex'
-//     })
-// };
 
 export const getSingleBoard = boardId => (
     $.ajax({

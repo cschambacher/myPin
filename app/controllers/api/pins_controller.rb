@@ -1,61 +1,59 @@
 class Api::PinsController < ApplicationController
     def new
-        @pin = Pin.new
+        @pin = Pin.new(user_id: current_user.id)
         render :new
     end
     
     def index
-        @pins = Pin.all.where(author_id: current_user.id)
-    end
-
-    def homeindex
-        @pins = Pin.all
-        render :index 
+        @pins = user.pins
     end
 
     def show
-        @pin = Pin.find(params[:id])
-        if @pin
+        if pin
             render :show
         else
-            render json: @pin.errors.full_messages, status: 404
+            render json: pin.errors.full_messages, status: 404
         end
     end
 
     def create
-        
         @pin = current_user.pins.new(pin_params)
-        if @pin.save
+        if pin.save
             render :show
         else
-            render json: @pin.errors.full_messages, status: 422
+            render json: pin.errors.full_messages, status: 422
         end
     end
 
     def edit
-        @pin = Pin.find(params[:id])
+        pin
         render :edit
     end
 
     def destroy
-        @pin = current_user.pins.find(params[:id])
-        @pin.destroy
-        render json: @pin
+        pin.destroy
+        render json: pin
     end
 
     def update
-        @pin = Pin.find(params[:id])
-        if @pin.update(pin_params)
-            render json: @pin
+        if pin.update(pin_params)
+            render json: pin
         else
-            render json: @pin.errors.full_messages, status: 422
+            render json: pin.errors.full_messages, status: 422
         end
     end
 
     private
 
+    def user
+        @user ||= User.find(params[:user_id])
+    end
+
+    def pin
+        @pin ||= current_user.pins.find(params[:id])
+    end
+
     def pin_params
-        puts params.inspect
         params.require(:pin).permit(:title, :description, :photo, :author_id)
     end
 end

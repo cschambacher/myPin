@@ -7,8 +7,8 @@ export const REMOVE_BOARD = 'REMOVE_BOARD';
 export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 
 
-export const requestBoards = () => (dispatch) => {
-    return APIUtil.getBoards()
+export const requestBoards = (userId) => (dispatch) => {
+    return APIUtil.getBoards(userId)
         .then(boards => { dispatch(receiveBoards(boards)) });
 }
 

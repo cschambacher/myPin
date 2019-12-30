@@ -6,7 +6,7 @@ import { selectBoard } from '../../reducer/selectors';
 const mapStateToProps = (state, ownProps) => {
     const boardId = parseInt(ownProps.match.params.boardId); 
     const board = selectBoard(state, boardId);
-    debugger;
+    // debugger;
     return {
         boardId,
         board

@@ -1,18 +1,18 @@
-export const getPins = () => {
+export const getPins = (userId) => {
     return $.ajax({
         method: 'GET',
-        url: '/api/pins'
+        url: `/api/users/${userId}/pins`
     })
 };
 
 export const getHomePins = () => {
     return $.ajax({
         method: 'GET',
-        url: '/api/pins/homeindex'
+        url: '/api/home'
     })
 };
 
-export const getSinglePin = pinId => (
+export const getSinglePin = (pinId)=> (
     $.ajax({
         method: 'GET',
         url: `api/pins/${pinId}`
@@ -22,7 +22,7 @@ export const getSinglePin = pinId => (
 export const createPin = (pin) => {
     return $.ajax({
         method: 'POST',
-        url: '/api/pins',
+        url: `/api/pins`,
         data: pin,
         contentType: false,
         processData: false
@@ -39,7 +39,7 @@ export const updatePin = pin => (
     })
 );
 
-export const deletePin = pinId => (
+export const deletePin = (pinId) => (
     $.ajax({
         url: `/api/pins/${pinId}/`,
         method: 'DELETE'

@@ -5,27 +5,20 @@ class Api::BoardsController < ApplicationController
     end
     
     def index
-        @boards = Board.all.where(author_id: current_user.id)
+        @boards = user.boards
     end
 
-    # def homeindex
-    #     @pins = Pin.all
-    #     render :index 
-    # end
-
     def show
-        @board = Board.find(params[:id])
-        if @board
+        if board
             render :show
         else
-            render json: @board.errors.full_messages, status: 404
+            render json: board.errors.full_messages, status: 404
         end
     end
 
     def create
-        
         @board = current_user.boards.new(board_params)
-        if @board.save
+        if board.save
             render :show
         else
             render json: @board.errors.full_messages, status: 422
@@ -33,26 +26,31 @@ class Api::BoardsController < ApplicationController
     end
 
     def edit
-        @board = Board.find(params[:id])
+        board
         render :edit
     end
 
     def destroy
-        @board = current_user.boards.find(params[:id])
-        @board.destroy
-        render json: @board
+        board.destroy
+        render json: board
     end
 
     def update
-        @board = Board.find(params[:id])
-        if @board.update(board_params)
-            render json: @board
+        if board.update(board_params)
+            render json: board
         else
-            render json: @board.errors.full_messages, status: 422
+            render json: board.errors.full_messages, status: 422
         end
     end
 
     private
+    def user
+        @user ||= User.find(params[:user_id])
+    end
+
+    def board
+        @board ||= current_user.boards.find(params[:id])
+    end
 
     def board_params
         params.require(:board).permit(:title, :private, :author_id, :pin_ids)

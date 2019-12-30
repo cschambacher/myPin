@@ -6,8 +6,8 @@ export const REMOVE_PIN = 'REMOVE_PIN';
 export const RECEIVE_PIN_ERRORS = 'RECEIVE_PIN_ERRORS';
 import * as APIUtil from '../util/pins';
 
-export const requestPins = () => (dispatch) => {
-    return APIUtil.getPins()
+export const requestPins = (userId) => (dispatch) => {
+    return APIUtil.getPins(userId)
         .then(pins => { dispatch(receivePins(pins)) });
 }
 

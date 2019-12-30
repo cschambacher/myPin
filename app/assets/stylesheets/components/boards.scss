@@ -1,0 +1,115 @@
+.boards-index{
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}    
+
+.item-board-index{
+    background-color: white;
+    max-width: 324px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: block;
+    opacity: 1;
+    position: relative;
+    display: block;
+}
+.item-board-index > li{
+    background-color: white;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-board{
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    padding-right: 10px;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    display: block;
+
+
+}
+
+.small-pin-1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 98.6667px;
+    height: 99px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.small-pin-2{
+    position: absolute;
+    top: 0px;
+    left: 100.667px;
+    width: 98.6667px;
+    height: 149.5px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+   
+}
+.small-pin-3{
+    position: absolute;
+    top: 0px;
+    left: 201.333px;
+    width: 98.6667px;
+    height: 99px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+.small-pin-4{
+    position: absolute;
+    top: 101px;
+    left: 0px;
+    width: 98.6667px;
+    height: 99px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    
+}
+.small-pin-5{
+    position: absolute;
+    top: 101px;
+    left: 201.333px;
+    width: 98.6667px;
+    height: 99px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.small-pin-6{
+    position: absolute;
+    top: 151.5px;
+    left: 100.667px;
+    width: 98.6667px;
+    height: 48.5px;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
