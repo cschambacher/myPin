@@ -28,35 +28,41 @@ class PinForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
-            <div>
-                <h3>{this.props.formType}</h3>
+            <div className="create-edit-form">
+                {/* <h3>{this.props.formType}</h3> */}
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Title
+                    <div className="create-edit-form-top">
+                    <button className="pin-submit" type='submit'>Save</button>
+                    </div>
+                    <div className="create-edit-form-left">
+                    <label className="photo-upload">Upload a photo
+                    <input
+                            type="file"
+                            onChange={this.handleFile}
+                        />
+                    </label>
+                    </div>
+                    <div className="create-edit-form-right">
+                    <label className="create-edit-form-title">
                         <input
                             type='text'
                             value={this.state.title}
+                            placeholder="Add your title"
                             onChange={this.update('title')}
                         />
                     </label>
-                    <label>
-                        Description
+                    <label className="create-edit-form-description">
                         <textarea
                             cols="30"
-                            rows="10"
+                            rows="1"
                             value={this.state.decription}
+                            placeholder="Tell everyone what your Pin is about"
                             onChange={this.update('description')}
                         />
                     </label>
-                    <label >Upload a photo
-                    <input
-                        type="file"
-                        onChange={this.handleFile}
-                    />
-                    </label>
-                    <button className="pin-submit" type='submit' value={this.props.formType} />
+                    </div>
+                    
                 </form>
             </div>
         );
