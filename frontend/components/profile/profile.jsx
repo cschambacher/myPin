@@ -16,8 +16,8 @@ export default class Profile extends React.Component {
         super(props);
         this.state = {
             panes: [
-                { title: 'pins', content: <PinIndex /> },
-                { title: 'boards', content: <BoardIndex /> },
+                { title: 'Pins', content: <PinIndex /> },
+                { title: 'Boards', content: <BoardIndex /> },
             ]
         }
 

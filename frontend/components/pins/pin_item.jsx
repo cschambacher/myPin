@@ -7,13 +7,20 @@ const PinsIndexItem = ({ pin, deletePin }) => {
     // debugger;
     return (
         <li className="item-pin-index">
-            <Link to={`/pins/${pin.id}`}>
-                {/* <span>{pin.title}</span> */}
-                <img src={pin.photoUrl} />
-                {/* <span>{pin.description}</span> */}
-            </Link>
-            <Link to={`/pins/${pin.id}/edit`}>Edit</Link>
-            <button onClick={() => deletePin(pin.id)}>Remove</button>
+            <div className="pin-list">
+                <Link to={`/pins/${pin.id}/edit`}>
+                <span className="icon-edit-list">
+                    <i className="fas fa-pen fa-1x"></i>
+                </span></Link>
+                <div className="pin-list-submit">Save</div>
+                <Link to={`/pins/${pin.id}`}>
+                    {/* <span>{pin.title}</span> */}
+                    <img src={pin.photoUrl} />
+                
+                </Link>
+                <button className="pin-list-btn" onClick={() => deletePin(pin.id)}>Remove</button>
+            </div>
+            <div className="pin-footer">{pin.description}</div> 
         </li>
     );
 }

@@ -10,7 +10,7 @@
     flex-direction: row;
 }
 
-.create-pin-footer{
+.pin-footer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,3 +32,57 @@
     color:white;
     border-radius: 45%;
 }
+
+    
+.pin-list{
+    position:relative;
+    
+}
+.icon-edit-list{
+    display:none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 3%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    // border: 2px solid green;
+    border-radius: 45%;
+    padding: 7px;
+    background-color: white;
+}
+.pin-list-submit{
+    display:none;
+    position: absolute;
+
+    top: 0%;
+    right: 5%;
+    margin-top: 10px;
+    //  margin-left: 20px;
+     border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(202, 5, 5);
+    // border: 2px solid blue;
+}
+
+.pin-list-btn{
+    display:none;
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+}
+
+.pin-list:hover .icon-edit-list{
+    display: block;
+}  
+.pin-list:hover .pin-list-submit{
+    display: block;
+}  
+.pin-list:hover .pin-list-btn{
+    display: block;
+}  
