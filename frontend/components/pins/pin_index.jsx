@@ -21,8 +21,11 @@ class PinIndex extends React.Component {
                 <ul>
                     <li className="item-pin-index">
                         <Link to={`/pins/new`}>
-                            <span>+</span> 
-                            <span>Create Pin</span> 
+                            <div className="create-pin-item"> 
+                                <div className="icon-plus-red"><i className="fas fa-plus fa-1x"></i></div> 
+                            </div>
+                            <div className="create-pin-footer">Create Pin</div> 
+                            
                         </Link>
                     </li>
                     {pins.map(pin => <PinIndexItem key={pin.id} pin={pin} deletePin={deletePin}/>)}

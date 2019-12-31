@@ -1,0 +1,34 @@
+.create-pin-item{
+    height: 236px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    box-sizing: border-box;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.create-pin-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px;
+    display: block;
+    font-weight: 700;
+    background: white;
+}
+
+.icon-plus-red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color:rgb(230, 0, 35);;
+    padding: 3px;
+    color:white;
+    border-radius: 45%;
+}
