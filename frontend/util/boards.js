@@ -21,7 +21,6 @@ export const createBoard = (board) => {
 };
 
 export const updateBoard = board => {
-    debugger;
     return $.ajax({
         url: `/api/boards/${board.id}`,
         method: 'patch',

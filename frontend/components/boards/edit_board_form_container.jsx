@@ -19,8 +19,6 @@ class EditBoardForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
-        // const board = this.state;
         this.props.action(this.state)
             .then(data => (this.props.history.push(`/boards/${data.board.id}`)));
 
@@ -33,7 +31,6 @@ class EditBoardForm extends React.Component {
     render() {
         const { action, formType, board } = this.props;
         if (!board) return null;
-        debugger;
         return (
             <div className="board-form-container">
                 <form onSubmit={this.handleSubmit} className="board-form-box">
