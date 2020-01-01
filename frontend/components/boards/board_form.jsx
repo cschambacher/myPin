@@ -4,6 +4,7 @@ class BoardForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.board;
+        // this.formType = this.props.formType;
 
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleFile = this.handleFile.bind(this);
@@ -11,7 +12,9 @@ class BoardForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(formData);
+        const board = Object.assign({}, this.state);
+        this.props.action(board).then(this.props.closeModal);
+
     }
 
     update(field) {
@@ -26,26 +29,35 @@ class BoardForm extends React.Component {
     render() {
         // console.log(this.state)
         return (
-            <div>
-                <h3>{this.props.formType}</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Title
-                        <input
-                            type='text'
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                        />
-                    </label>
-                    <label>
-                        Private
-                        <input
-                            value={this.state.decription}
-                            onChange={this.update('private')}
-                        />
-                    </label>
-                    <button className="board-submit" type='submit' value={this.props.formType} />
-                    
+            <div className="board-form-container">  
+                <form onSubmit={this.handleSubmit} className="board-form-box">
+                    <nav className="board-form-header">
+                        <h3>{this.props.formType}</h3>
+                        <div onClick={this.props.closeModalForm} className="close-x">X</div>
+                    </nav>
+                    <div className="board-form">
+                        <label>
+                            Title
+                            <input
+                                type='text'
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                                className="board-input"
+                            />
+                        </label>
+                        <br/>
+                        <label>
+                            Private
+                            <input
+                                // type="checkbox"
+                                value={this.state.private}
+                                onChange={this.update('private')}
+                                className="board-input"
+                            />
+                        </label>
+                        <br/>
+                        <input className="board-submit" type='submit' value={this.props.formType} />
+                    </div>
                 </form>
             </div>
         );

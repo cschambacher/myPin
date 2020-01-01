@@ -1,0 +1,60 @@
+.board-form-container{
+    position: relative;
+  top: 10px;
+  left: 50%;
+  margin-left: -220px;
+  width: 400px;
+//   padding: 20px;
+  background: #fff;
+  z-index: 3;
+    border-radius: 5%;
+  border: 1px solid grey;
+   display: flex;
+   justify-content: center;
+
+}
+
+.board-form-box{
+    border-radius: 5%;
+    padding: 40px;
+   background: white;
+   position: relative;
+    
+}
+ .board-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+ .board-header{
+    align-items: center;
+    text-align: center;
+ }
+
+ .board-input {
+//    margin-left: 20px;
+   padding: 10px;
+   border-radius: 7px;
+  border: 1px solid grey;
+ }
+
+ .board-form-box {
+//    outline: 1px solid black;
+   
+ }
+
+ .board-submit {
+     align-items: center;
+    text-align: center;
+     margin-top: 10px;
+    //  margin-left: 20px;
+     border: 1px solid grey;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+   text-transform: capitalize;
+   color: white;
+    font-weight: bold;
+    background-color: rgb(202, 5, 5);
+ }
+ 

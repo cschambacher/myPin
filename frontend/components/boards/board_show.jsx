@@ -10,7 +10,7 @@ class BoardShow extends React.Component {
 
     render() {
         const { boardId, board } = this.props;
-        // debugger;
+        debugger;
         return (
             <div>
                 <h1>{board.title}</h1>

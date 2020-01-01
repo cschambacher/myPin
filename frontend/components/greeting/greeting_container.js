@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { openModal } from '../../actions/modal_actions';
+import { openModalForm } from '../../actions/modal_form_actions';
 import Greeting from './greeting';
 
 const mstp = ({ session, entities }) => {
@@ -12,7 +12,7 @@ const mstp = ({ session, entities }) => {
 
 const mdtp = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal))
+    openModalForm: modalform => dispatch(openModalForm(modalform))
 });
 
 

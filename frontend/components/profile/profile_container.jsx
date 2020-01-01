@@ -3,6 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { requestSingleUser } from '../../actions/users_actions';
 import { selectUser } from '../../reducer/selectors';
 import Profile from './profile';
+import { openModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => {
     const userId = parseInt(ownProps.match.params.userId);
@@ -15,7 +16,8 @@ const mstp = (state, ownProps) => {
 };
 
 const mdtp = dispatch => ({
-    requestSingleUser: userId => dispatch(requestSingleUser(userId))
+    requestSingleUser: userId => dispatch(requestSingleUser(userId)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 

@@ -24,7 +24,7 @@ class PinIndex extends React.Component {
                             <div className="create-pin-item"> 
                                 <div className="icon-plus-red"><i className="fas fa-plus fa-1x"></i></div> 
                             </div>
-                            <div className="create-pin-footer">Create Pin</div> 
+                            <div className="pin-footer">Create Pin</div> 
                             
                         </Link>
                     </li>

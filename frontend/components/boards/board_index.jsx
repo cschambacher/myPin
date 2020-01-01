@@ -17,7 +17,7 @@ class BoardIndex extends React.Component {
         // debugger;
         return (
             <section className="boards-index">
-                <CreateBoardFormContainer/>
+                {/* <CreateBoardFormContainer/> */}
                 <ul>
                     
                     {boards.map(board => <BoardIndexItem key={board.id} board={board} deleteBoard={deleteBoard}/>)}

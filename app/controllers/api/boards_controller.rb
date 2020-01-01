@@ -37,7 +37,7 @@ class Api::BoardsController < ApplicationController
 
     def update
         if board.update(board_params)
-            render json: board
+            render :show
         else
             render json: board.errors.full_messages, status: 422
         end

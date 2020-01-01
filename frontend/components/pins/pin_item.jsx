@@ -14,7 +14,6 @@ const PinsIndexItem = ({ pin, deletePin }) => {
                 </span></Link>
                 <div className="pin-list-submit">Save</div>
                 <Link to={`/pins/${pin.id}`}>
-                    {/* <span>{pin.title}</span> */}
                     <img src={pin.photoUrl} />
                 
                 </Link>

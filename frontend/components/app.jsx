@@ -16,9 +16,10 @@ import BoardShowContainer from './boards/board_show_container';
 import EditBoardFormContainer from './boards/edit_board_form_container';
 import CreateBoardFormContainer from './boards/create_board_form_container';
 import ProfileContainer from './profile/profile_container'
-
+import ModalForm from './greeting/modal_form.jsx';
 const App = () => (
-    <div>       
+    <div>  
+        <ModalForm/>     
         <ProtectedRoute path="/" component={Header} />
         {/* <AuthRoute path="/login" component={LoginFormContainer} /> */}
         {/* <AuthRoute path="/signup" component={SignupFormContainer} />  */}
