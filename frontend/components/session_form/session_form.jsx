@@ -54,9 +54,9 @@ class SessionForm extends React.Component {
                 
                 <form onSubmit={this.handleSubmit} className="session-form-box">
                     <nav className="session-header">
-                    <div className="session-logo">
-                        <img src={window.logoURL} />
-                    </div>
+                        <div className="header-logo">
+                            <img src={window.logo2URL} />
+                        </div>
                     <h3>Welcome to MyPin!</h3>
                     <h4>Find new ideas to try</h4>
                     </nav>
@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
                         <div className="session-btn">
                         <input className="session-submit" type="submit" value={this.props.formType}/>
                         </div>
-                        <div className="demo login" onClick={this.demoLogin}>or Login as Guest</div>
+                        <div className="demo-login" onClick={this.demoLogin}>Login as Guest</div>
 
                     </div>
                     <small>By continuing, you agree to have fun and get creative</small>
