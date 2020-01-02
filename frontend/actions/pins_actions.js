@@ -12,7 +12,6 @@ export const requestPins = (userId) => (dispatch) => {
 }
 
 export const requestHomePins = () => (dispatch) => {
-    console.log("helloooo");
     return APIUtil.getHomePins()
         .then(pins => { dispatch(receiveHomePins(pins)) });
 }
@@ -31,8 +30,8 @@ export const createPin = pin => dispatch => (
     }).fail(err => dispatch(receivePinErrors(err.responseJSON)))
 );
 
-export const updatePin = pin => dispatch => (
-    APIUtil.updatePin(pin)
+export const updatePin = (pin, pinId) => dispatch => (
+    APIUtil.updatePin(pin, pinId)
         .then(pin => dispatch(receiveSinglePin(pin)))
         .fail(err => dispatch(receivePinErrors(err.responseJSON)))
 );

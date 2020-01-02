@@ -15,7 +15,7 @@ class PinForm extends React.Component {
         formData.append('pin[title]', this.state.title);
         formData.append('pin[description]', this.state.description);
         formData.append('pin[photo]', this.state.photoFile);
-        this.props.action(formData);
+        this.props.action(formData, this.state.id);
     }
 
     update(field) {
@@ -23,7 +23,6 @@ class PinForm extends React.Component {
     }
 
     handleFile(e){
-        // debugger;
         this.setState({ photoFile: e.currentTarget.files[0] })
     }
 
@@ -36,10 +35,11 @@ class PinForm extends React.Component {
                     <button className="pin-submit" type='submit'>Save</button>
                     </div>
                     <div className="create-edit-form-left">
-                    <label className="photo-upload">Upload a photo
+                        <label className="photo-upload">
+                            <img src={this.state.photoUrl} /> 
                     <input
-                            type="file"
-                            onChange={this.handleFile}
+                        type="file"
+                        onChange={this.handleFile}
                         />
                     </label>
                     </div>
@@ -56,7 +56,7 @@ class PinForm extends React.Component {
                         <textarea
                             cols="30"
                             rows="1"
-                            value={this.state.decription}
+                            value={this.state.description}
                             placeholder="Tell everyone what your Pin is about"
                             onChange={this.update('description')}
                         />

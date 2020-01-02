@@ -32,12 +32,12 @@ class Api::PinsController < ApplicationController
 
     def destroy
         pin.destroy
-        render json: pin
+        render :show
     end
 
     def update
         if pin.update(pin_params)
-            render json: pin
+            render :show
         else
             render json: pin.errors.full_messages, status: 422
         end

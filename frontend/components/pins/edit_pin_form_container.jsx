@@ -29,7 +29,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     requestSinglePin: pinId => dispatch(requestSinglePin(pinId)),
-    action: pin => dispatch(updatePin(pin))
+    action: (pin, pinId) => dispatch(updatePin(pin, pinId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPinForm);

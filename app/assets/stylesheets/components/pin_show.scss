@@ -1,0 +1,121 @@
+.pin-show{  
+    position: relative;
+    display:flex;
+    justify-content: center;
+    // align-items: center;
+    height: 1700px;
+    background-color: white;
+
+}
+
+.pin-show-box{
+    position: relative;
+    margin-top: 30px;
+    display:block;
+    align-items: center;
+    width: 508px;
+    height: 1037px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
+    border-radius: 32px;
+    background: white;
+}
+
+.pin-show img{ 
+    display: flex;
+    flex-direction: column;
+    width: 508px;
+    height: 635px;
+    position: relative;
+    justify-content: center;
+    width: 508px;
+    border-radius: 32px 32px 0px 0px;
+}
+
+.pin-show-detail{
+    width: 508px;
+    display: block;
+    flex-direction: column;
+}
+
+.pin-show-header{
+    position: sticky;
+    display: flex;
+    min-height: 72px;
+    padding: 20px 20px 16px 28px;
+    // border: 1px solid blue;
+
+}
+.pin-show-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    .icon-edit-pin{
+        display: flex;
+        align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    // border: 2px solid green;
+    border-radius: 45%;
+    padding: 7px;
+    background-color: white;
+    }
+    .icon-edit-pin:hover{
+        background: rgb(231, 228, 228);
+    }
+    .pin-list-btn-pin{
+        display: flex;
+        align-items: center;
+    justify-content: center;
+     border: 1px solid grey;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+    }
+    .pin-list-submit-pin{
+        display: flex;
+        align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(202, 5, 5);
+    }
+}
+
+
+.pin-show-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        align-items: center;
+    justify-content: center;
+    
+}
+
+.pin-show-body h2{
+        font-size: 36px;
+        color: black;
+        display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.pin-show-body p{
+        font-size: 16px;
+        color: black;
+        display: block;
+        text-align: left;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

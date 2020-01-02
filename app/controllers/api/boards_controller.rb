@@ -43,6 +43,16 @@ class Api::BoardsController < ApplicationController
         end
     end
 
+    def repin
+        pin = pin.where(id = params.require(pin_id).first)
+        if pin
+            board.pins += pin
+            render :show
+        else
+            render json: board.errors.full_messages, status: 404
+        end
+    end
+
     private
     def user
         @user ||= User.find(params[:user_id])

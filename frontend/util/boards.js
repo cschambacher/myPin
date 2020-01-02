@@ -34,3 +34,11 @@ export const deleteBoard = boardId => (
         method: 'DELETE'
     })
 )
+
+export const repin = (board, pinId) => {
+    return $.ajax({
+        url: `/api/boards/${board.id}`,
+        method: 'patch',
+        data: { board, pinId },
+    });
+};

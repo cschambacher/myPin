@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     
     resources :pins, except: [:index]
-    resources :boards, except: [:index]
+    resources :boards, except: [:index] do
+      patch :repin
+    end
 
     resource :home, only: [] do
       get :index

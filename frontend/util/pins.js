@@ -29,15 +29,16 @@ export const createPin = (pin) => {
     });
 };
 
-export const updatePin = pin => (
-    $.ajax({
-        url: `/api/pins/${pin.id}`,
+export const updatePin = (pin, pinId) => {
+    debugger;
+    return $.ajax({
+        url: `/api/pins/${pinId}`,
         method: 'patch',
         data: pin,
         contentType: false,
         processData:false
     })
-);
+};
 
 export const deletePin = (pinId) => (
     $.ajax({
