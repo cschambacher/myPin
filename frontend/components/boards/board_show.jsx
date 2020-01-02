@@ -24,10 +24,10 @@ class BoardShow extends React.Component {
                 <div className="board-show-header">
                     <h1>{board.title}</h1>
                     <p>{this.privacy(board)}</p>
-                </div>
-                <div className="masonry-board-show-pins">
                     <span className="icon-back-arrow"><Link to="/users/:userId/boards"><i className="fas fa-arrow-left fa-2x"></i></Link>
                     </span>
+                </div>
+                <div className="masonry-board-show-pins">
                     <ul>
                         {board.pins.map(pin => 
                         <li className="item-board-show-pins"><PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin} /></li>)}
