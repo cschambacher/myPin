@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import {logout} from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import Home from './home';
+import { selectAllUsers } from '../../reducer/selectors';
 
-const mstp = ({ session, entities }) => {
+const mstp = (state) => {
     // debugger;
     return {
-        currentUser: entities.users[session.id],
+        
+        currentUser: state.entities.users[state.session.id],
     };
 };
 

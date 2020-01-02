@@ -5,8 +5,9 @@ import PinIndexItem from '../pins/pin_item';
 class BoardShow extends React.Component {
    
     componentDidMount() {
+        console.log("whatever");
         this.props.requestSingleBoard(this.props.boardId);
-        this.props.requestBoards(this.props.match.params.userId);
+        this.props.requestBoards(this.props.userId);
     }
     privacy(board){
         if (board.private){
@@ -18,7 +19,9 @@ class BoardShow extends React.Component {
 
     render() {
         const { boardId, board, boards, savePin, deletePin } = this.props;
-        // debugger;
+        
+        if (!board.pins) return null;
+        debugger;
         return (
             <div className="board-show">
                 <div className="board-show-header">
@@ -30,7 +33,9 @@ class BoardShow extends React.Component {
                 <div className="masonry-board-show-pins">
                     <ul>
                         {board.pins.map(pin => 
-                        <li className="item-board-show-pins"><PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin} /></li>)}
+                       
+                            <PinIndexItem pin={pin} boards={boards} savePin={savePin} deletePin={deletePin} />
+                        )}
                     </ul>
                 
                 </div>

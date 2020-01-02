@@ -5,11 +5,13 @@ import { selectBoard, selectAllBoards } from '../../reducer/selectors';
 import { requestPins, deletePin, savePin } from '../../actions/pins_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    const userId = state.session.id;
     const boardId = parseInt(ownProps.match.params.boardId); 
     const board = selectBoard(state, boardId);
     const boards = selectAllBoards(state)
     // debugger;
     return {
+        userId,
         boardId,
         board,
         boards

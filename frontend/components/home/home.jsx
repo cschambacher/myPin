@@ -22,6 +22,7 @@ const Home = ({ currentUser, logout, openModal }) => {
             <button className="header-greeting-btn" onClick={logout}>Log Out</button> 
             </div> */}
             {/* <Greeting/> */}
+            
             <HomeIndex/>
         </hgroup>
        

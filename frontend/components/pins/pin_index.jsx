@@ -29,7 +29,7 @@ class PinIndex extends React.Component {
                             
                         </Link>
                     </li>
-                    {pins.map(pin => <PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin}/>)}
+                    {pins.map(pin => <PinIndexItem pin={pin} boards={boards} savePin={savePin} deletePin={deletePin}/>)}
                 </ul>
                 {/* <CreatePinFormContainer /> */}
                 {/* <BoardIndex/> */}

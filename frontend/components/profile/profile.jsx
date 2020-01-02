@@ -28,9 +28,10 @@ export default class Profile extends React.Component {
     }
 
     render (){
+        const { user, userId } = this.props;
         return (
             <div className="profile">
-                <Greeting />
+                <Greeting user={user} userId={userId}/>
                 <div className='interactive'>
                     <Tabs panes={this.state.panes} />
                 </div>

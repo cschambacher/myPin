@@ -23,7 +23,7 @@ export const selectBoard = ({ entities: { boards } }, id) => {
 //     return boardspins;
 // };
 
-
+export const selectAllUsers= ({ entities: { users } }) => Object.values(users)
 export const selectUser = ({ entities: { users } }, id) => {
     if (users[id]) {
         const user = users[id];

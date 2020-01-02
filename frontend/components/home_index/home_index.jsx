@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeIndexItem from './home_index_item';
+import { Link } from 'react-router-dom';
 
 class HomeIndex extends React.Component {
     constructor(props) {
@@ -8,14 +9,20 @@ class HomeIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestPins();
+        this.props.requestUsers();
         this.props.requestBoards(this.props.userId);
     }
 
     render() {
-        const { pins, boards, savePin } = this.props;
-        // console.log("home index");
+        const { pins, boards, savePin, users } = this.props;
+        debugger;
         return (
             <section className="home-index">
+                <div className="users-index">
+                    <ul>checkout other users profiles (
+                        {users.map(user => <li key={user.id}><Link to={`/users/${user.id}/`}>{user.username}</Link></li>)}
+                    )</ul>
+                </div>
                 <ul className="masonry-home-index">
                     {pins.map(pin => <HomeIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} />)}
                 </ul>

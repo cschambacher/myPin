@@ -13,7 +13,7 @@ const pinSaved = (board, pin) => {
 const PinsIndexItem = ({ pin, boards, deletePin, savePin }) => {
    
     return (
-        <li className="item-pin-index">
+        <li key={pin.id} className="item-pin-index">
             <div className="pin-list">
                 <Link to={`/pins/${pin.id}/edit`}>
                 <span className="icon-edit-list">
