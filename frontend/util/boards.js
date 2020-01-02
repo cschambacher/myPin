@@ -1,5 +1,5 @@
 export const getBoards = (userId) => {
-    debugger;
+    // debugger;
     return $.ajax({
         method: 'GET',
         url: `/api/users/${userId}/boards`
@@ -37,7 +37,7 @@ export const deleteBoard = boardId => (
 )
 
 export const repin = (board, pinId) => {
-    debugger;
+    // debugger;
     return $.ajax({
         url: `/api/boards/${board.id}/repin`,
         method: 'patch',

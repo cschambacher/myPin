@@ -8,7 +8,7 @@ export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 
 
 export const requestBoards = (userId) => (dispatch) => {
-    debugger;
+    // debugger;
     return APIUtil.getBoards(userId)
         .then(boards => { dispatch(receiveBoards(boards)) });
 }

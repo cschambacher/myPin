@@ -36,7 +36,6 @@ class Api::PinsController < ApplicationController
     end
 
     def update
-        debugger
         if pin_params[:photo] == "undefined" && pin.update(update_pin_params)
             render :show
         elsif pin.update(pin_params)

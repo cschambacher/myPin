@@ -16,7 +16,7 @@ class PinIndex extends React.Component {
 
     render() {
         const { pins, boards, deletePin, savePin } = this.props;
-        debugger;
+        // debugger;
         return (
             <section className="masonry-pin-index">
                 <ul>

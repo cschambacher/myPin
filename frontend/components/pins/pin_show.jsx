@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 class PinShow extends React.Component {
    
     componentDidMount() {
-        debugger;
+        // debugger;
         this.props.requestSinglePin(this.props.pinId);
     }
 
     render() {
         const { pinId, pin, deletePin } = this.props;
-        debugger;
+        // debugger;
         return (
             <div className="pin-show">
                 <div className="pin-show-box">

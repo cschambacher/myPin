@@ -18,7 +18,7 @@ class BoardShow extends React.Component {
 
     render() {
         const { boardId, board, boards, savePin, deletePin } = this.props;
-        debugger;
+        // debugger;
         return (
             <div className="board-show">
                 <div className="board-show-header">
