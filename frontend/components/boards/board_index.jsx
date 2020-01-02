@@ -13,14 +13,14 @@ class BoardIndex extends React.Component {
     }
 
     render() {
-        const { boards, deleteBoard } = this.props;
+        const { boards, deleteBoard, savePin } = this.props;
         // debugger;
         return (
             <section className="boards-index">
                 {/* <CreateBoardFormContainer/> */}
                 <ul>
                     
-                    {boards.map(board => <BoardIndexItem key={board.id} board={board} deleteBoard={deleteBoard}/>)}
+                    {boards.map(board => <BoardIndexItem key={board.id} board={board} boards={boards} savePin={savePin} deleteBoard={deleteBoard}/>)}
                 </ul>
                
             </section>

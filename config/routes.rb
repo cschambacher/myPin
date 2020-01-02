@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     
     resources :pins, except: [:index]
     resources :boards, except: [:index] do
-      patch :repin
+      patch :repin, on: :member
     end
 
     resource :home, only: [] do

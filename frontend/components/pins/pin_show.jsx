@@ -24,6 +24,9 @@ class PinShow extends React.Component {
                             </li>
                             <li><button className="pin-list-btn-pin" onClick={() => deletePin(pin.id)}>Remove</button></li>
                             <li className="pin-list-submit-pin">Save</li>  
+                                {/* <div className="pin-list-submit-dropdown">
+                                    {boards.map(board => <div key={board.id} onClick={() => savePin(board, pin.id)}>{board.title}</div>)}
+                                </div> */}
                         </ul>
                     </div>
                     <div className="pin-show-body">

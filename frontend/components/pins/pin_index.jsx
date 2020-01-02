@@ -11,11 +11,12 @@ class PinIndex extends React.Component {
 
     componentDidMount(){
         this.props.requestPins(this.props.match.params.userId);
+        this.props.requestBoards(this.props.match.params.userId);
     }
 
     render() {
-        const { pins, deletePin } = this.props;
-        // debugger;
+        const { pins, boards, deletePin, savePin } = this.props;
+        debugger;
         return (
             <section className="masonry-pin-index">
                 <ul>
@@ -28,7 +29,7 @@ class PinIndex extends React.Component {
                             
                         </Link>
                     </li>
-                    {pins.map(pin => <PinIndexItem key={pin.id} pin={pin} deletePin={deletePin}/>)}
+                    {pins.map(pin => <PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin}/>)}
                 </ul>
                 {/* <CreatePinFormContainer /> */}
                 {/* <BoardIndex/> */}

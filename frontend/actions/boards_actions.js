@@ -8,14 +8,10 @@ export const RECEIVE_BOARD_ERRORS = 'RECEIVE_BOARD_ERRORS';
 
 
 export const requestBoards = (userId) => (dispatch) => {
+    debugger;
     return APIUtil.getBoards(userId)
         .then(boards => { dispatch(receiveBoards(boards)) });
 }
-
-// export const requestHomeBoards = () => (dispatch) => {
-//     return APIUtil.getHomeBoards()
-//         .then(boards => { dispatch(receiveHomeBoards(boards)) });
-// }
 
 export const requestSingleBoard = (boardId) => (dispatch) => {
     return APIUtil.getSingleBoard(boardId).then(board => {
@@ -33,6 +29,11 @@ export const createBoard = board => dispatch => (
 
 export const updateBoard = board => dispatch => (
     APIUtil.updateBoard(board)
+        .then(board => dispatch(receiveSingleBoard(board)))
+        .fail(err => dispatch(receiveBoardErrors(err.responseJSON)))
+);
+export const savePin = (board, pinId) => dispatch => (
+    APIUtil.repin(board, pinId)
         .then(board => dispatch(receiveSingleBoard(board)))
         .fail(err => dispatch(receiveBoardErrors(err.responseJSON)))
 );

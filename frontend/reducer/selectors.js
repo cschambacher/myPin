@@ -9,6 +9,7 @@ export const selectPin = ({ entities: { pins } }, id) => {
 };
 export const selectAllBoards = ({ entities: { boards } }) => Object.values(boards)
 
+
 export const selectBoard = ({ entities: { boards } }, id) => {
     if (boards[id]) {
         const board = boards[id];

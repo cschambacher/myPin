@@ -30,7 +30,7 @@ export const createPin = (pin) => {
 };
 
 export const updatePin = (pin, pinId) => {
-    debugger;
+    // debugger;
     return $.ajax({
         url: `/api/pins/${pinId}`,
         method: 'patch',
