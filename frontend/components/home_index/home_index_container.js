@@ -1,15 +1,20 @@
 import React from 'react';
 import HomeIndex from './home_index';
 import { requestHomePins } from '../../actions/pins_actions';
-import { selectAllPins } from '../../reducer/selectors';
+import { requestBoards, savePin } from '../../actions/boards_actions';
+import { selectAllPins, selectAllBoards } from '../../reducer/selectors';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
-    pins: selectAllPins(state)
+    userId: state.session.id,
+    pins: selectAllPins(state),
+    boards: selectAllBoards(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    requestPins: () => dispatch(requestHomePins())
+    requestPins: () => dispatch(requestHomePins()),
+    requestBoards: (userId) => dispatch(requestBoards(userId)),
+    savePin: (board, userId) => dispatch(savePin(board, userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeIndex);

@@ -8,15 +8,16 @@ class HomeIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestPins();
+        this.props.requestBoards(this.props.userId);
     }
 
     render() {
-        const { pins } = this.props;
+        const { pins, boards, savePin } = this.props;
         // console.log("home index");
         return (
             <section className="home-index">
                 <ul className="masonry-home-index">
-                    {pins.map(pin => <HomeIndexItem key={pin.id} pin={pin}  />)}
+                    {pins.map(pin => <HomeIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} />)}
                 </ul>
             </section>
         )
