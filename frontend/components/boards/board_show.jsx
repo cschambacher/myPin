@@ -11,9 +11,9 @@ class BoardShow extends React.Component {
     }
     privacy(board){
         if (board.private){
-            return "private";
+            return <small> saved</small>;
         } else {
-            return "public";
+            return <small> not saved</small>;
         }
     }
 
