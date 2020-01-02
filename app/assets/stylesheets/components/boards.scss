@@ -4,6 +4,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    background-color: white;
 }    
 
 .item-board-index{
@@ -19,6 +20,10 @@
     opacity: 1;
     position: relative;
     display: block;
+}
+.item-board-index h1{
+    text-align: center;
+    font-size: 24px;
 }
 .item-board-index > li{
     background-color: white;
@@ -112,4 +117,28 @@
     position: relative;
     overflow: hidden;
     will-change: transform;
+}
+.board-index-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.remove-board-btn{
+    // color: darkgrey;
+    // border-color: darkgrey;
+}
+.icon-edit-board{
+    width: 40px;
+    height: 40px;
+    // border: 2px solid green;
+    border-radius: 45%;
+    padding: 7px;
+    background-color: white;
+    border-radius: 45%;
+
+}
+.remove-board-btn:hover,
+.icon-edit-board:hover{
+    background: rgb(231, 228, 228);
 }

@@ -8,16 +8,32 @@ class BoardShow extends React.Component {
         this.props.requestSingleBoard(this.props.boardId);
         this.props.requestBoards(this.props.match.params.userId);
     }
+    privacy(board){
+        if (board.private){
+            return "private";
+        } else {
+            return "public";
+        }
+    }
 
     render() {
         const { boardId, board, boards, savePin, deletePin } = this.props;
         debugger;
         return (
-            <div>
-                <h1>{board.title}</h1>
-                <p>{board.private}</p>
-                <p>{board.pins.map(pin => <PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin}/>)}</p>
-                <Link to="/" />
+            <div className="board-show">
+                <div className="board-show-header">
+                    <h1>{board.title}</h1>
+                    <p>{this.privacy(board)}</p>
+                </div>
+                <div className="masonry-board-show-pins">
+                    <span className="icon-back-arrow"><Link to="/users/:userId/boards"><i className="fas fa-arrow-left fa-2x"></i></Link>
+                    </span>
+                    <ul>
+                        {board.pins.map(pin => 
+                        <li className="item-board-show-pins"><PinIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} deletePin={deletePin} /></li>)}
+                    </ul>
+                
+                </div>
             </div>
         );
     }
