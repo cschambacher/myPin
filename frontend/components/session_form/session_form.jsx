@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleInput(type) {
@@ -22,6 +23,15 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         // this.props.processForm(user);
+        this.props.processForm(user);
+    }
+    demoLogin(e){
+        e.preventDefault();
+        const user = this.state = {
+            username: 'guest',
+            email: '',
+            password: 'password',
+        };
         this.props.processForm(user);
     }
 
@@ -66,7 +76,7 @@ class SessionForm extends React.Component {
                             className="session-input"
                         />
                    
-                    <br/>
+                        <br/>
                          <input
                             type="password"
                             value={this.state.password}
@@ -77,6 +87,8 @@ class SessionForm extends React.Component {
                         <div className="session-btn">
                         <input className="session-submit" type="submit" value={this.props.formType}/>
                         </div>
+                        <div className="demo login" onClick={this.demoLogin}>or Login as Guest</div>
+
                     </div>
                     <small>By continuing, you agree to have fun and get creative</small>
                     {/* <div className="session-form-bottom">
