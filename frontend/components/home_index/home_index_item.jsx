@@ -3,9 +3,9 @@ import { Route, Link } from 'react-router-dom';
 
 const pinSaved = (board, pin) => {
     if (board.pins.some(pinEl => (pinEl.id === pin.id))) {
-        return " saved";
+        return <small> saved</small>;
     } else {
-        return " unsaved";
+        return <small> not saved</small>;
     }
 };
 
