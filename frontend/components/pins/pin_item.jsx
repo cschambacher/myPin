@@ -2,9 +2,16 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 
+const pinSaved = (board, pin) => {
+    if (board.pins.some(pinEl => (pinEl.id === pin.id))){
+        return " saved";
+    } else {
+        return " unsaved";
+    }
+};
 
 const PinsIndexItem = ({ pin, boards, deletePin, savePin }) => {
-    // debugger;
+   
     return (
         <li className="item-pin-index">
             <div className="pin-list">
@@ -12,10 +19,16 @@ const PinsIndexItem = ({ pin, boards, deletePin, savePin }) => {
                 <span className="icon-edit-list">
                     <i className="fas fa-pen fa-1x"></i>
                 </span></Link>
-                <div className="pin-list-submit">Save</div>
-                <div className="pin-list-submit-dropdown">
-                    {boards.map(board => <div key={board.id} onClick={()=>savePin(board, pin.id)}>{board.title}</div>)}
-                </div>
+                <nav className="pin-list-submit-dropdown">
+                    <span className="pin-list-submit">Save</span>
+                    
+                    <div className="pin-list-submit-dropdown-content">
+                        {boards.map(board => 
+                            <div className="pin-list-submit-board" key={board.id} onClick={()=>savePin(board, pin.id)}>
+                            {board.title} {pinSaved(board, pin)}
+                        </div>)}
+                    </div>
+                </nav>
                 <Link to={`/pins/${pin.id}`}>
                     <img src={pin.photoUrl} />
                 

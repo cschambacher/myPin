@@ -36,7 +36,10 @@ class Api::PinsController < ApplicationController
     end
 
     def update
-        if pin.update(pin_params)
+        debugger
+        if pin_params[:photo] == "undefined" && pin.update(update_pin_params)
+            render :show
+        elsif pin.update(pin_params)
             render :show
         else
             render json: pin.errors.full_messages, status: 422
@@ -55,5 +58,9 @@ class Api::PinsController < ApplicationController
 
     def pin_params
         params.require(:pin).permit(:title, :description, :photo, :author_id)
+    end
+
+    def update_pin_params
+        params.require(:pin).permit(:title, :description, :author_id)
     end
 end

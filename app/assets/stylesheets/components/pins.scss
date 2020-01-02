@@ -36,6 +36,7 @@
     
 .pin-list{
     position:relative;
+    // border: 1px solid purple;
     
 }
 .icon-edit-list{
@@ -53,9 +54,8 @@
     background-color: white;
 }
 .pin-list-submit{
-    display:none;
+    display:block;
     position: absolute;
-
     top: 0%;
     right: 5%;
     margin-top: 10px;
@@ -86,3 +86,37 @@
 .pin-list:hover .pin-list-btn{
     display: block;
 }  
+
+// .pin-list-submit-dropdown {
+//     position: relative;
+//     display: block;
+//     border: 1px solid purple;
+
+// }
+.pin-list-submit-dropdown-content {
+    display: none;
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  margin-top: -5px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+//   border: 1px solid blue;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.pin-list-submit-board:hover{
+    text-decoration: underline;
+    background: rgb(231, 228, 228);
+}
+
+.pin-list-submit-dropdown-content:hover,
+.pin-list-submit-dropdown:hover + .pin-list-submit-dropdown {
+    display: block;
+}   
