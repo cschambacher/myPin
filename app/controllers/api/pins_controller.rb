@@ -9,6 +9,7 @@ class Api::PinsController < ApplicationController
     end
 
     def show
+        @pin = Pin.find(params[:id])
         if pin
             render :show
         else

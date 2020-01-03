@@ -20,7 +20,7 @@ export const requestSinglePin = (pinId) => (dispatch) => {
     return APIUtil.getSinglePin(pinId).then(pin => {
         dispatch(receiveSinglePin(pin));
         return pin;
-    }).fail(err => dispatch(receivePinErrors(err.responseJSON)))
+    });
 }
 
 export const createPin = pin => dispatch => (

@@ -8,10 +8,16 @@ class PinShow extends React.Component {
         // debugger;
         this.props.requestSinglePin(this.props.pinId);
     }
-
+    removeBtn(id, pin) {
+    if (id === pin.author_id){
+        return <button className="pin-list-btn-pin" onClick={() => deletePin(pin.id)}>Remove</button>
+    } else {
+        return <span></span>;
+    }
+    };
     render() {
-        const { pinId, pin, deletePin } = this.props;
-        // debugger;
+        const { pinId, pin, currUserId, deletePin } = this.props;
+        debugger;
         return (
             <div className="pin-show">
                 <div className="pin-show-box">
@@ -22,7 +28,8 @@ class PinShow extends React.Component {
                             <li className="icon-edit-pin"><Link to={`/pins/${pin.id}/edit`}>
                                 <i className="fas fa-pen fa-1x"></i></Link>
                             </li>
-                            <li><button className="pin-list-btn-pin" onClick={() => deletePin(pin.id)}>Remove</button></li>
+                            {this.removeBtn(currUserId, pin)}
+                            {/* <li><button className="pin-list-btn-pin" onClick={() => deletePin(pin.id)}>Remove</button></li> */}
                             <li className="pin-list-submit-pin">Save</li>  
                                 {/* <div className="pin-list-submit-dropdown">
                                     {boards.map(board => <div key={board.id} onClick={() => savePin(board, pin.id)}>{board.title}</div>)}

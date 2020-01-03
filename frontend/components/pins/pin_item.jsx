@@ -10,8 +10,7 @@ const pinSaved = (board, pin) => {
     }
 };
 
-const PinsIndexItem = ({ pin, boards, deletePin, savePin }) => {
-   
+const PinsIndexItem = ({ pin, boards, deletePin, savePin}) => {
     return (
         <li key={pin.id} className="item-pin-index">
             <div className="pin-list">
@@ -33,7 +32,7 @@ const PinsIndexItem = ({ pin, boards, deletePin, savePin }) => {
                     <img src={pin.photoUrl} />
                 
                 </Link>
-                <button className="pin-list-btn" onClick={() => deletePin(pin.id)}>Remove</button>
+                {/* <button className="pin-list-btn" onClick={() => deletePin(pin.id)}>Remove</button> */}
             </div>
             <div className="pin-footer">{pin.description}</div> 
         </li>

@@ -5,7 +5,6 @@ import PinIndexItem from '../pins/pin_item';
 class BoardShow extends React.Component {
    
     componentDidMount() {
-        console.log("whatever");
         this.props.requestSingleBoard(this.props.boardId);
         this.props.requestBoards(this.props.userId);
     }
