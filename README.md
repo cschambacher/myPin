@@ -38,6 +38,58 @@ The mosaic-like appearance of a Pinterest feed on the home page and progile page
 
 ![alt text](https://github.com/corina-s/myPin/blob/master/app/assets/images/profile.png "Profile")
 
+## H2 Technical challenges
+1. To allow boards to have many pins and pins to belong to many boards, and conserve space while improving scalability, I used polymorphic associations on the back end.
+```ruby
+    belongs_to :author,
+        class_name: 'User',
+        foreign_key: :author_id
+
+    has_and_belongs_to_many :boards
+
+    has_many :users,
+        through: :boards,
+        source: :author
+```
+2. Custom action on the backend to save a pin to a board
+3. Front End routing for smooth rendering of the components
+4. Front End profile component designing: I used a Tabs component and a Header's component to enable display of two tabs in the profile to render the user's pins or the users'boards on select of the tab's header.
+```javascript
+export default class Tabs extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedPane: 0
+        };
+        this.selectTab = this.selectTab.bind(this);
+    }
+
+    selectTab(num) {
+        this.setState({ selectedPane: num });
+    }
+
+    render() {
+        const pane = this.props.panes[this.state.selectedPane];
+
+        return (
+            <div className='profile-tabs'>
+                <div className='tabs'>
+                    <Headers
+                        selectedPane={this.state.selectedPane}
+                        onTabChosen={this.selectTab}
+                        panes={this.props.panes}>
+                    </Headers>
+                    <div className='tab-content'>
+                        <article>
+                            {pane.content}
+                        </article>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+```
 
 ## H2 Future Implementations
 * Search bar
