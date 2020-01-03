@@ -8,10 +8,12 @@ myPin is a single-page application inspired by Pinterest. Users can create board
 https://mypin1.herokuapp.com/
 
 ## Technologies
-* Ruby on Rails
-* React/ Redux
-* PostgreSQL database
-* AWS for hosting images
+
+MyPin runs on the Rails framework and is hosted on Heroku. Rails is used strictly as a RESTful API, returning JSON data and interpreted by React.js in the frontend.
+
+As a single-page application, React.js and Redux.js are used in frontend to manage frontend data. Node package manager (npm) is used to install all of the frontend dependencies.
+
+AWS S3 is used for managing photos that users upload. And PostgreSQL is used for managing database except photos. AJAX requests are used for communication with rails backend.
 
 ## Features
 1. User authentication
