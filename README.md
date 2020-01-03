@@ -1,24 +1,45 @@
-# README
+# H1 MyPin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](https://github.com/corina-s/myPin/blob/master/app/assets/images/logo2.png "Logo Title Text 1")
 
-Things you may want to cover:
+myPin is a single-page application inspired by Pinterest. Users can create boards, and save a collection of Pins to each board. Pins are image-type elements that can be created by the User or saved to a board from the home feed.
 
-* Ruby version
+## H2 Live Link
+https://mypin1.herokuapp.com/
 
-* System dependencies
+## H2 Technologies
+* Ruby on Rails
+* React/ Redux
+* PostgreSQL database
+* AWS for hosting images
 
-* Configuration
+## H2 Features
+1. User authentication
+2. User profile feed
+3. Boards
+  *  Create, 
+  *  Edit,
+  *  Remove 
+4. Pins
+  *  Create, 
+  *  Edit,
+  *  Remove 
+5. Save a pin to a board
+6. Home feed with masonry layout
+7. Modal forms
 
-* Database creation
+## H2 Features details
+### H3 Modal Forms
+* The myPin login/signup and create forms on have been implemented using modals. A modal component was utilized to render the correct forms based on switch cases. 
+* The modals can be closed by clicking on the backgroud, however the splash cannot be accessed if a user is not logged in.
+![alt text](https://github.com/corina-s/myPin/blob/master/app/assets/images/modal_login.png "Login Modal")
+### H3 CSS Masonry Layout
+The mosaic-like appearance of a Pinterest feed on the home page and progile page was achieved using a CSS grid. Image sizes and columns are adjusted based on the size of the screen.
 
-* Database initialization
+![alt text](https://github.com/corina-s/myPin/blob/master/app/assets/images/profile.png "Profile")
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## H2 Future Implementations
+* Search bar
+* Followers for boards and users
 
-* Deployment instructions
-
-* ...
