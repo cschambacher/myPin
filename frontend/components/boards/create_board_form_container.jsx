@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
     closeModalForm: () => dispatch(closeModalForm())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoardForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BoardForm));

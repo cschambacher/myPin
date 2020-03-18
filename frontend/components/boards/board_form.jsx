@@ -13,7 +13,11 @@ class BoardForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const board = Object.assign({}, this.state);
-        this.props.action(board).then(this.props.closeModal);
+        this.props.action(board)
+        .then(data => {
+            // console.log("data", data);
+            this.props.history.push(`/boards/${data.id}`)
+        }).then(this.props.closeModalForm).catch(err => console.log(err));
 
     }
 
@@ -27,7 +31,7 @@ class BoardForm extends React.Component {
     // }
 
     render() {
-        // console.log(this.state)
+        console.log(this.state)
         return (
             <div className="board-form-container">  
                 <form onSubmit={this.handleSubmit} className="board-form-box">
