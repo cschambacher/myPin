@@ -20,7 +20,8 @@ class EditBoardForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state)
-            .then(data => (this.props.history.push(`/boards/${data.board.id}`)));
+            .then(data => (this.props.history.push(`/boards/${data.board.id}`)))
+            .then(this.props.history.push(`/boards/${this.props.match.params.boardId}`));
 
     }
 
