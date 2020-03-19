@@ -1,4 +1,7 @@
 import React from 'react';
+import { push } from 'react-router-redux';
+import { Redirect } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 class PinForm extends React.Component {
     constructor(props) {
@@ -16,7 +19,13 @@ class PinForm extends React.Component {
         formData.append('pin[title]', this.state.title);
         formData.append('pin[description]', this.state.description);
         formData.append('pin[photo]', this.state.photoFile);
-        this.props.action(formData, this.state.id);
+        this.props.action(formData, this.state.id)
+            .then(data => { console.log("props", this.props); 
+            // console.log("history", this.props.history);
+            const id = this.state.id || data.id; 
+            this.props.history.push(`/pins/${id}`)
+            
+            }).catch(err => console.log(err));;
     }
 
     update(field) {
@@ -28,6 +37,7 @@ class PinForm extends React.Component {
     }
 
     render() {
+        
         return (
             <div className="create-edit-form">
                 {/* <h3>{this.props.formType}</h3> */}
@@ -70,4 +80,4 @@ class PinForm extends React.Component {
     }
 }
 
-export default PinForm;
+export default withRouter(PinForm);

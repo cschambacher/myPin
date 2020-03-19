@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
     action: pin => dispatch(createPin(pin))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PinForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PinForm));

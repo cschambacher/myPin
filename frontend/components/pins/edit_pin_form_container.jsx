@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PinForm from './pin_form';
 import { requestSinglePin, updatePin } from '../../actions/pins_actions';
 
@@ -32,4 +33,4 @@ const mapDispatchToProps = dispatch => ({
     action: (pin, pinId) => dispatch(updatePin(pin, pinId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditPinForm);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EditPinForm));
