@@ -10,13 +10,16 @@ class PinShow extends React.Component {
     }
     removeBtn(id, pin) {
     if (id === pin.author_id){
-        return <button className="pin-list-btn-pin" onClick={() => deletePin(pin.id)}>Remove</button>
+        return <button className="pin-list-btn-pin" 
+            onClick={() => this.props.deletePin(pin.id)
+                .then(this.props.history.push(`/users/${id}`))
+                .catch(err => console.log(err))}>Remove</button>
     } else {
         return <span></span>;
     }
     };
     render() {
-        const { pinId, pin, currUserId, deletePin } = this.props;
+        const { pinId, pin, currUserId } = this.props;
         debugger;
         return (
             <div className="pin-show">
