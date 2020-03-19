@@ -6,9 +6,33 @@ import { requestSinglePin, updatePin } from '../../actions/pins_actions';
 
 
 class EditPinForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.props.pin;
+        // this.formType = this.props.formType;
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleFile = this.handleFile.bind(this);
+    }
     componentDidMount() {
         this.props.requestSinglePin(this.props.match.params.pinId);
     }
+    // handleSubmit(e) {
+    //     e.preventDefault();
+
+    //     // const formData = new FormData();
+    //     // formData.append('pin[title]', this.state.title);
+    //     // formData.append('pin[description]', this.state.description);
+    //     // formData.append('pin[photo]', this.state.photoFile);
+    //     this.props.action(formData, this.state.id)
+    //         .then(data => {
+    //             console.log("props", this.props);
+    //             // console.log("history", this.props.history);
+    //             const id = this.state.id || data.id;
+    //             this.props.history.push(`/pins/${id}`)
+
+    //         }).catch(err => console.log(err));;
+    // }
 
     render() {
         const { action, formType, pin } = this.props;
