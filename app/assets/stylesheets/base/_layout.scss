@@ -52,6 +52,7 @@ button{
     column-count: 3;
     column-gap: 1em;
   }
+
 }
 @media screen and (max-width: 301px) {
   /* styles for this breakpoint go here */
@@ -59,4 +60,5 @@ button{
     column-count: 2;
     column-gap: 1em;
   }
+ 
 }
