@@ -18,11 +18,11 @@ class HomeIndex extends React.Component {
         debugger;
         return (
             <section className="home-index">
-                <div className="users-index">
+                {/* <div className="users-index">
                     <ul>checkout other users profiles (
                         {users.map(user => <li key={user.id}><Link to={`/users/${user.id}/`}>{user.username}</Link></li>)}
                     )</ul>
-                </div>
+                </div> */}
                 <ul className="masonry-home-index">
                     {pins.map(pin => <HomeIndexItem key={pin.id} pin={pin} boards={boards} savePin={savePin} />)}
                 </ul>

@@ -44,3 +44,19 @@ button{
       border-radius: 15px;
   }
 }
+
+
+@media (min-width: 301px) and (max-width: 600px){
+  /* styles for this breakpoint go here */
+  [class*="masonry-"] {
+    column-count: 3;
+    column-gap: 1em;
+  }
+}
+@media screen and (max-width: 301px) {
+  /* styles for this breakpoint go here */
+  [class*="masonry-"] {
+    column-count: 2;
+    column-gap: 1em;
+  }
+}
