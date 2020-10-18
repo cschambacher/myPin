@@ -28,13 +28,12 @@ const Header = ({ currentUser, logout, openModal }) => {
                 </div>
                 <div className="header-right">
                     <ul className="header-list">
-                        <li className="profile-dropdown"><Link to={`/users/${currentUser.id}/`}>Profile</Link></li>
-                            <div className="profile-dropdown-content">
-                                <li className="header-button" onClick={logout}>Log Out</li>
-                            </div>
                         <li className="icon-message"><i className="fas fa-comment-dots fa-2x"></i></li>
                         <li className="icon-notification"><i className="fas fa-bell fa-2x"></i></li>
-                        
+                        <li className="profile-dropdown"><Link to={`/users/${currentUser.id}/`}>Profile</Link></li>
+                        <div className="profile-dropdown-content">
+                            <li className="header-button" onClick={logout}>Log Out</li>
+                        </div>
                     </ul>
                 </div>
             </nav>
