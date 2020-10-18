@@ -20,6 +20,7 @@ body {
 //   // border: 1px solid blue;
 // }
 .header li {
+  margin: 10px;
   display: block;
   padding: 7px;
   text-align: center;
@@ -112,10 +113,15 @@ body {
 // }
 
 .header-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid red;
   // border-left: 1px solid #ccc;
 }
 
 .header-list > li:hover {
+  
   background: rgb(231, 228, 228);
 }
 
